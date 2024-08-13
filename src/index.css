@@ -1,7 +1,7 @@
 :root {
-  --bg: #282c34;
-  --header: #fff;
-  --link: #61dafb;
+  --bg: black;
+  --header: blue;
+  --link: green;
   --text: hsla(0, 0%, 100%, 0.88);
 }
 

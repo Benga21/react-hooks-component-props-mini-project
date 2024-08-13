@@ -1,15 +1,20 @@
-import React from "react";
-import blogData from "../data/blog";
+import React from 'react';
+import Header from './Header'; // Adjust the path if necessary
+import About from './About'; // Adjust the path if necessary
+import ArticleList from './ArticleList'; // Adjust the path if necessary
+import blogData from '../data/blog'; // Ensure this is the default export
 
-console.log(blogData);
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+    <div>
+      <Header name="My Blog" />
+      <About 
+        image="https://e7.pngegg.com/pngimages/352/117/png-clipart-call-of-duty-black-ops-2-logo-call-of-duty-black-ops-iii-call-of-duty-4-modern-warfare-call-of-duty-video-game-call-of-duty-thumbnail.png" 
+        about="Welcome to my personal blog!" 
+      />
+      <ArticleList articles={blogData} />
     </div>
   );
-}
+};
 
 export default App;
