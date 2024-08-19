@@ -1,22 +1,17 @@
 import React from 'react';
+function Article({ title, date = "January 1, 1970", preview, minutes }) {
+    let emoji = minutes < 30 ? "☕️" : "🍱";
+    let emojiCount = minutes < 30 ? Math.ceil(minutes / 5) : Math.ceil(minutes / 10);
+    const emojis = emoji.repeat(emojiCount);
 
-const Article = ({ title, date = "January 1, 1970", preview, minutes }) => {
-  const getMinutesToRead = (minutes) => {
-    if (minutes < 30) {
-      return "☕️".repeat(Math.ceil(minutes / 5)) + ` ${minutes} min read`;
-    } else {
-      return "🍱".repeat(Math.ceil(minutes / 10)) + ` ${minutes} min read`;
-    }
-  };
-
-  return (
-    <article>
-      <h3>{title}</h3>
-      <small>{date}</small>
-      <p>{preview}</p>
-      <p>{getMinutesToRead(minutes)}</p>
-    </article>
-  );
-};
+    return (
+        <article>
+            <h3>{title}</h3>
+            <small>{date} • {emojis} {minutes} min read</small>
+            <p>{preview}</p>
+        </article>
+    );
+}
 
 export default Article;
+ 
